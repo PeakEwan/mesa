@@ -174,8 +174,8 @@ def _model_run_func(
     data = []
 
     steps = list(range(0, model.steps, data_collection_period))
-    if not steps or steps[-1] != model.steps - 1:
-        steps.append(model.steps - 1)
+    if not steps or steps[-1] != model.steps:
+        steps.append(model.steps)
 
     for step in steps:
         model_data, all_agents_data = _collect_data(model, step)
